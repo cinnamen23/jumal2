@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="org.zerock.persistence.StoreDAO">
+
+<select id="getTime" resultType="string">
+select now()
+</select>
+
+<insert id="insert">
+insert into tbl_store (sname, lat, lng, info) values (#{sname},#{lat},#{lng},#{info});
+</insert>
+
+<select id="selectStore" resultType="org.zerock.domain.StoreVO">
+select *from tbl_store where sno=#{sno}
+</select>
+
+<select id="selectWithsname" resultType="org.zerock.domain.StoreVO">
+select *from tbl_store where sno=#{sno} and sname=#{sname}
+</select>
+
+
+
+</mapper>
