@@ -34,6 +34,6 @@
 
 <context:component-scan base-package="org.zerock.persistence"></context:component-scan>
 <context:component-scan base-package="org.zerock.service"></context:component-scan>
-
+<context:component-scan base-package="org.zerock.domain"></context:component-scan>
 
 </beans>

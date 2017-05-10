@@ -9,7 +9,17 @@
 <body>
 
 
-<span>안녕 ${msg}</span>
+<table>
+
+<tr>
+<td><h1>${vo.bno}</h1></td>
+<td><h1>${vo.title}</h1></td>
+<td><h1>${vo.content}</h1></td>
+<td><h1>${vo.writer}</h1></td>
+<td><h1>${vo.regdate}</h1></td>
+
+</tr>
+</table>
 
 </body>
 </html>

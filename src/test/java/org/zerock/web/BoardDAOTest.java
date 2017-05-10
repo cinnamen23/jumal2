@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 import org.zerock.persistence.BoardDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -58,7 +59,8 @@ public class BoardDAOTest {
 	
 	@Test
 	public void testList()throws Exception{
-		dao.listAll();
+		Criteria cri = new Criteria();
+		dao.listAll(cri);
 	}
 	
 	

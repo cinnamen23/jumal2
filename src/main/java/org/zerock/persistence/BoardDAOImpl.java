@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
+import org.zerock.domain.SearchCriteria;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -40,8 +42,25 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardVO> listAll() throws Exception {
-		return sess.selectList(namespace+".listAll");
+	public List<BoardVO> listAll(Criteria cri) throws Exception {
+		return sess.selectList(namespace+".listAll",cri);
+	}
+
+	@Override
+	public int getTotal() throws Exception {
+		
+		return sess.selectOne(namespace+".getTotal");
+	}
+
+	@Override
+	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+		return sess.selectList(namespace+".listSearch",cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return sess.selectOne(namespace+"listSearchCount",cri);
 	}
 
 }
